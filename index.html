@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS 3rd Class</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="icon" type="images" href="images/excel.png">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+
+<!-- Small modal -->
+<div class="modal fade click" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+      	<h5>Clock</h5>
+      	<hr>
+      	    <p id="Clock"></p>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-success" data-dismiss="modal">close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<center>
+  <input class="form" type="text" name="" id="PrimNotPrim" placeholder="Check Primnumbers" > 
+<button type="button" onclick="SeePrime();">Result</button>
+
+<p id="ShowRslt"></p>
+</center>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+
+<script>
+
+function Clck(){
+
+var a=new Date();
+var Time=a.toLocaleString();
+document.getElementById("Clock").innerHTML=Time ;
+} 
+setInterval(
+	function(){
+		Clck()
+	}
+	,1000);
+
+setTimeout(
+	function(){
+
+		$('.click').modal('show');
+		} ,2000); 
+
+
+
+function SeePrime(){
+
+  var str=document.getElementById("PrimNotPrim").value;
+
+  var i=0;
+  var j=2;
+
+  for(j ; j < str; j++ ){
+    if (str%j == 0) {
+      i=j;
+    }
+  }
+
+  if (i==0){
+      document.getElementById("ShowRslt").innerHTML="Primnumbers";
+  } else {
+      document.getElementById("ShowRslt").innerHTML="Not Primnumbers";
+  }
+
+}
+
+
+
+</script>
+
+</body>
+</html>
